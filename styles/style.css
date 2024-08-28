@@ -1,0 +1,382 @@
+:root {
+    --primary-color: #0e4bf1;
+    --panel-color: #fff;
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --text-color: #000000;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --toggle-color: #ddd;
+    --box1-color: #4da3ff;
+    --box2-color: #ffe6ac;
+    --box3-color: #e7d1fc;
+    --title-icon-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.wrapper-Topics img {
+    filter: brightness(50%);
+    filter: invert(50%);
+}
+
+.wrapper-setting img {
+    filter: brightness(50%);
+    filter: invert(50%);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+/* WRAPPEr QISMI */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    width: 250px;
+}
+
+.wrapper-logotip {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper-logotip span {
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 25px;
+    color: var(--text-color);
+}
+
+.wrapper-logotip img{
+    border-radius: 50%;
+}
+
+.mode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.wrapper-Topics ul {
+    padding-top: 40px;
+}
+
+.wrapper-Topics ul li {
+    margin-bottom: 20px;
+    padding: 0px 20px;
+}
+
+.wrapper-Topics ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.wrapper-Topics ul li a img {
+    margin-right: 10px;
+}
+
+.wrapper-Topics ul li:hover a {
+    color: var(--primary-color);
+    transition: var(--tran-05);
+}
+
+.wrapper-Topics ul li:hover a img {
+    filter: invert(100%);
+    transition: var(--tran-05);
+}
+
+.wrapper-setting {
+    padding: 20px;
+    margin-top: auto;
+}
+
+.wrapper-setting a {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.wrapper-setting img {
+    margin-right: 10px;
+}
+
+.wrapper-setting a:hover {
+    color: var(--primary-color);
+    transition: var(--tran-05);
+}
+
+.wrapper-setting .mode {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper-setting .mode img {
+    margin-right: 10px;
+}
+
+.wrapper-setting .mode a {
+    color: var(--text-color);
+}
+
+.wrapper-setting .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.wrapper-setting .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.wrapper-setting .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+    border-radius: 25px;
+}
+
+.wrapper-setting .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    transition: var(--tran-05);
+    top: 2.5px;
+    left: 3px;
+}
+
+.wrapper-setting input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+.wrapper-setting input:checked + .slider:before {
+    transform: translateX(25px);
+    background-color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
+    width: calc(100% - 250px);
+    height: 100vh;
+    margin-left: auto;
+    padding: 20px;
+    background-color: var(--panel-color);
+    overflow-y: auto;
+}
+
+.main__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.menu--bar {
+    cursor: pointer;
+}
+
+.menu--search {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+
+}
+
+.menu--search input {
+    width: 400px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 8px 12px;
+    color: var(--text-color);
+}
+
+.menu--profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fast {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.fast img {
+    filter: invert(100%);
+    border-radius: 50%;
+}
+
+.fast span {
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* RESULT BOLIMI */
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 70px;
+}
+
+.like {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 12px;
+    width: calc(100% / 3 - 15px);
+    padding: 15px 20px;
+    background-color: var(--box1-color)
+}
+
+.like span {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.like h2 {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.coment {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 12px;
+    width: calc(100% / 3 - 15px);
+    padding: 15px 20px;
+    background-color: var(--box2-color);
+}
+
+.coment span {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.coment h2 {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.share {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    border-radius: 12px;
+    width: calc(100% / 3 - 15px);
+    padding: 15px 20px;
+    background-color: var(--box3-color);
+}
+
+.share span {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.share h2 {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* RECENT BOLIMI */
+
+.recent {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* TABLE BOLIMI */
+.table {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+    color: var(--black-light-color);
+}
+
+.table td {
+    color: var(--text-color);
+}
+
+.table input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
